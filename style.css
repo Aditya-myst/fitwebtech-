@@ -1,0 +1,280 @@
+/* --- Global Styles & Variables --- */
+:root {
+  --primary-color: #0d6efd;
+  --secondary-color: #1ABC9C;
+  --accent-color: #fd7e14;
+  --danger-color: #dc3545;
+  --success-color: #198754;
+  --light-color: #f8f9fa;
+  --dark-color: #212529;
+  --text-color: #333;
+  --card-shadow: 0 7px 20px rgba(0,0,0,0.08);
+  --border-radius: 10px;
+}
+
+/* Animation Keyframes */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
+  background: linear-gradient(to right, #eef2f3, #f0f2f5);
+  color: var(--text-color);
+}
+
+.container {
+  max-width: 1100px;
+  margin: 2rem auto;
+  padding: 0 2rem;
+}
+
+/* --- Header & Navigation --- */
+header {
+  background: var(--dark-color);
+  color: white;
+  padding: 1.2rem 2rem;
+  text-align: center;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+nav {
+  display: flex;
+  justify-content: center;
+  background-color: #343a40;
+  padding: 0.5rem;
+  flex-wrap: wrap;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  padding: 0.5rem 1.5rem;
+  margin: 0 5px;
+  border-radius: var(--border-radius);
+  transition: all 0.3s ease;
+}
+
+nav a:hover, nav a.active {
+  background-color: var(--primary-color);
+  color: white;
+  transform: translateY(-2px);
+}
+
+/* --- Welcome & Cards --- */
+.welcome-header {
+  background: white;
+  padding: 1.5rem 2rem;
+  margin-bottom: 2rem;
+  border-radius: var(--border-radius);
+  box-shadow: var(--card-shadow);
+  text-align: center;
+}
+.welcome-header #currentDate {
+  color: #6c757d;
+  font-size: 1rem;
+}
+
+.flex {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.card {
+  background: white;
+  padding: 2rem;
+  border-radius: var(--border-radius);
+  box-shadow: var(--card-shadow);
+  text-align: center;
+  flex: 1;
+  min-width: 250px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 25px rgba(0,0,0,0.1);
+}
+
+/* --- Progress Circles --- */
+.progress-circle {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  background: radial-gradient(closest-side, white 79%, transparent 80% 100%),
+              conic-gradient(var(--secondary-color) calc(var(--percent) * 1%), #e9ecef 0);
+  margin: 1rem auto;
+  transition: background 0.8s ease-in-out;
+}
+#caloriesCircle {
+  background: radial-gradient(closest-side, white 79%, transparent 80% 100%),
+              conic-gradient(var(--accent-color) calc(var(--percent) * 1%), #e9ecef 0);
+}
+#waterCircle {
+  background: radial-gradient(closest-side, white 79%, transparent 80% 100%),
+              conic-gradient(var(--primary-color) calc(var(--percent) * 1%), #e9ecef 0);
+}
+.progress-circle span {
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+/* NEW: Controls within cards (for water intake) */
+.card-controls {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.control-btn {
+  background: #e9ecef;
+  color: var(--dark-color);
+  border: 1px solid #ced4da;
+  padding: 8px 16px;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+.control-btn:hover {
+  background: #dde2e6;
+  border-color: #adb5bd;
+  transform: translateY(-2px);
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+/* --- Forms & Buttons --- */
+input, select {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 1rem;
+  border: 1px solid #ced4da;
+  border-radius: var(--border-radius);
+  font-size: 1rem;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+input:focus, select:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 3px rgba(13, 110, 253, 0.25);
+}
+
+button {
+  background: var(--primary-color);
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+button:hover {
+  background-color: #0b5ed7;
+  transform: translateY(-3px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+/* --- Lists (Activity & Meals) --- */
+.list-item {
+  background: white;
+  padding: 1rem 1.5rem;
+  margin-bottom: 0.75rem;
+  border-radius: var(--border-radius);
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  animation: fadeIn 0.5s ease-out forwards;
+}
+
+.list-item button {
+  background: var(--danger-color);
+  padding: 6px 12px;
+  font-size: 0.9rem;
+}
+.list-item button:hover {
+  background: #b02a37;
+  box-shadow: none;
+}
+
+/* --- Modal --- */
+.modal-overlay {
+  position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+  background: rgba(0,0,0,0.6);
+  display: none; justify-content: center; align-items: center;
+  z-index: 1000; opacity: 0; transition: opacity 0.3s ease;
+}
+.modal {
+  background: white; padding: 2.5rem; border-radius: var(--border-radius);
+  text-align: center; box-shadow: 0 5px 25px rgba(0,0,0,0.2);
+  transform: translateY(-50px); transition: transform 0.3s ease;
+  max-width: 400px;
+}
+.modal p { margin-bottom: 1.5rem; font-size: 1.1rem; }
+.modal button { background-color: var(--success-color); }
+.modal button:hover { background-color: #146c43; }
+
+
+/* --- Insights Page Chart Bars --- */
+.chart-container {
+  background: white; padding: 2rem; border-radius: var(--border-radius);
+  box-shadow: var(--card-shadow); height: 300px; display: flex;
+  align-items: flex-end; justify-content: center; gap: 12px;
+  margin-bottom: 2rem;
+}
+
+.bar {
+  width: 45px;
+  border-radius: 5px 5px 0 0;
+  transition: all 0.5s ease-out;
+  position: relative;
+  cursor: pointer;
+}
+.bar:hover {
+  filter: brightness(1.1);
+  transform: translateY(-5px);
+}
+.bar::after {
+  content: attr(data-tooltip);
+  position: absolute; top: -30px; left: 50%;
+  transform: translateX(-50%); background: var(--dark-color);
+  color: white; padding: 4px 10px; border-radius: 5px;
+  font-size: 0.85rem; white-space: nowrap;
+  opacity: 0; pointer-events: none;
+  transition: opacity 0.3s, top 0.3s;
+}
+.bar:hover::after {
+  opacity: 1;
+  top: -35px;
+}
+#weeklyActivities .bar { background: linear-gradient(to top, #1ABC9C, #16a085); }
+#weeklyCalories .bar { background: linear-gradient(to top, #fd7e14, #e67e22); }
+
+
+/* --- Responsive Design --- */
+@media (max-width: 768px) {
+  .container { padding: 0 1rem; }
+  .flex, .chart-container { flex-direction: column; align-items: center; }
+  .chart-container { height: auto; padding: 1.5rem; }
+  .bar { width: 80%; height: 30px !important; margin-bottom: 8px; border-radius: 5px; }
+  .bar:hover::after { top: 50%; left: 105%; transform: translateY(-50%); }
+  .bar:hover { transform: translateX(5px); }
+  .card { width: 100%; max-width: 400px; }
+  nav { padding: 0.5rem 0; }
+  nav a { padding: 0.5rem 1rem; font-size: 0.9rem; }
+}

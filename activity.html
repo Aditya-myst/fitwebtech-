@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FitTrack Pro — Activity Log</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<script src="script.js" defer></script>
+</head>
+<body>
+<header><h1>Activity Log</h1></header>
+<nav>
+    <a href="index.html">Overview</a>
+    <a href="activity.html" class="active">Activity Log</a>
+    <a href="meals.html">Meal Planner</a>
+    <a href="insights.html">Insights</a>
+</nav>
+
+<main class="container">
+    <h2>Filter Activities</h2>
+    <select onchange="renderActivities(this.value)">
+        <option>All</option>
+        <option>Morning</option>
+        <option>Afternoon</option>
+        <option>Evening</option>
+    </select>
+    <ul id="activityList"></ul>
+
+    <h3>Add New Activity</h3>
+    <input id="activityName" placeholder="Activity Name (e.g., 'Weightlifting')">
+    <input id="activityDuration" type="number" placeholder="Duration in minutes">
+    <input id="activityCalories" type="number" placeholder="Calories Burned">
+    <input id="activitySteps" type="number" placeholder="Steps (optional)">
+    <select id="activityTime">
+        <option>Morning</option>
+        <option>Afternoon</option>
+        <option>Evening</option>
+    </select>
+    <button onclick="addActivity()">Add Activity</button>
+</main>
+
+<div id="modalOverlay" class="modal-overlay" onclick="closeModal()">
+    <div class="modal" onclick="event.stopPropagation();">
+        <p id="modalMessage"></p>
+        <button onclick="closeModal()">OK</button>
+    </div>
+</div>
+</body>
+</html>

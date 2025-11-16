@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FitTrack Pro — Daily Wellness Overview</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<script src="script.js" defer></script>
+</head>
+<body>
+<header><h1>FitTrack Pro</h1></header>
+<nav>
+    <a href="index.html" class="active">Overview</a>
+    <a href="activity.html">Activity Log</a>
+    <a href="meals.html">Meal Planner</a>
+    <a href="insights.html">Insights</a>
+</nav>
+<main class="container">
+    <div class="welcome-header">
+        <h2>Welcome Back!</h2>
+        <p id="currentDate"></p>
+        <div id="clock" style="font-size:1.5rem; font-weight: 600; margin-top: 0.5rem;"></div>
+    </div>
+    <div class="flex">
+        <div class="card">
+            <h3>Steps</h3>
+            <div id="stepsCircle" class="progress-circle"><span id="stepsVal"></span></div>
+        </div>
+        <div class="card">
+            <h3>Calories Burned</h3>
+            <div id="caloriesCircle" class="progress-circle"><span id="caloriesVal"></span></div>
+        </div>
+        <div class="card">
+            <h3>Water Intake</h3>
+            <div id="waterCircle" class="progress-circle"><span id="waterVal"></span></div>
+            <div class="card-controls">
+                <button class="control-btn" onclick="addWater(0.25)">+ 1 Glass</button>
+                <button class="control-btn" onclick="addWater(0.5)">+ 1 Bottle</button>
+            </div>
+        </div>
+    </div>
+</main>
+</body>
+</html>

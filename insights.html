@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FitTrack Pro — Insights & Summary</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<script src="script.js" defer></script>
+</head>
+<body>
+<header><h1>Insights & Summary</h1></header>
+<nav>
+    <a href="index.html">Overview</a>
+    <a href="activity.html">Activity Log</a>
+    <a href="meals.html">Meal Planner</a>
+    <a href="insights.html" class="active">Insights</a>
+</nav>
+<main class="container">
+    <h3>Activity Durations (mins)</h3>
+    <div id="weeklyActivities" class="chart-container"></div>
+
+    <h3>Calories Burned per Activity</h3>
+    <div id="weeklyCalories" class="chart-container"></div>
+
+    <div style="text-align: center; margin-top: 2rem;">
+        <button onclick="downloadSummary()">Download Summary</button>
+        <button onclick="resetDashboard()" style="background-color: var(--danger-color);">Reset All Data</button>
+    </div>
+</main>
+
+<div id="modalOverlay" class="modal-overlay" onclick="closeModal()">
+    <div class="modal" onclick="event.stopPropagation();">
+        <p id="modalMessage"></p>
+        <button onclick="closeModal()">OK</button>
+    </div>
+</div>
+</body>
+</html>

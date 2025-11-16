@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FitTrack Pro — Meal Planner</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<script src="script.js" defer></script>
+</head>
+<body>
+<header><h1>Meal Planner</h1></header>
+<nav>
+    <a href="index.html">Overview</a>
+    <a href="activity.html">Activity Log</a>
+    <a href="meals.html" class="active">Meal Planner</a>
+    <a href="insights.html">Insights</a>
+</nav>
+<main class="container">
+    <h2 id="totalCalories">Total Today: 0 Calories</h2>
+    <hr style="margin: 1.5rem 0; border: 1px solid #eee;">
+
+    <h3>Breakfast</h3>
+    <div id="breakfastList"></div>
+    <input id="breakfastName" placeholder="Meal Name">
+    <input id="breakfastCalories" type="number" placeholder="Calories">
+    <button onclick="addMeal('breakfast')">Add Breakfast</button>
+
+    <h3 style="margin-top:2rem;">Lunch</h3>
+    <div id="lunchList"></div>
+    <input id="lunchName" placeholder="Meal Name">
+    <input id="lunchCalories" type="number" placeholder="Calories">
+    <button onclick="addMeal('lunch')">Add Lunch</button>
+
+    <h3 style="margin-top:2rem;">Dinner</h3>
+    <div id="dinnerList"></div>
+    <input id="dinnerName" placeholder="Meal Name">
+    <input id="dinnerCalories" type="number" placeholder="Calories">
+    <button onclick="addMeal('dinner')">Add Dinner</button>
+</main>
+
+<div id="modalOverlay" class="modal-overlay" onclick="closeModal()">
+    <div class="modal" onclick="event.stopPropagation();">
+        <p id="modalMessage"></p>
+        <button onclick="closeModal()">OK</button>
+    </div>
+</div>
+</body>
+</html>
