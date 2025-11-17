@@ -46,22 +46,6 @@ This project is built with fundamental web technologies and contains no external
 
 There is no installation needed! Simply visit the live demo link to start using the application.
 
-**[Go to the Live App](https://YOUR-USERNAME.github.io/fittrack-pro/)**
-
-### For Developers
-
-If you want to run this project locally or make your own modifications:
-
-1.  **Clone the repository:**
-    ```sh
-    git clone https://github.com/YOUR-USERNAME/fittrack-pro.git
-    ```
-2.  **Navigate to the project directory:**
-    ```sh
-    cd fittrack-pro
-    ```
-3.  **Open `index.html` in your browser:**
-    Simply double-click the `index.html` file, or right-click and choose "Open with" your favorite browser.
 
 ## 📖 Usage
 
